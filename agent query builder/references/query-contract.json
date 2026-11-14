@@ -1,0 +1,26 @@
+{
+  "description": "Required fields enforced by scripts/audit.py. Evidence identifiers refer to an external evidence.json manifest, never to invented source rows.",
+  "example": {
+    "query_id": "EVAL-0001",
+    "target_agent": "example-review-agent",
+    "query": "Using snapshot REV-204, which review evidence is missing?",
+    "routing_polarity": "positive",
+    "answerability": "supported",
+    "expected_route": "example-review-agent",
+    "expected_behavior": "answer",
+    "expected_answer": "Return only the missing evidence documented in REV-204.",
+    "evidence_ids": ["example-review-agent:REV-204"],
+    "origin": "generated",
+    "split": "evaluation",
+    "derivation": "Direct lookup; no live-system claim."
+  },
+  "evidence_manifest_example": [
+    {
+      "evidence_id": "example-review-agent:REV-204",
+      "locator": "example-records.txt:L4-L9",
+      "text": "REV-204 has a pending review because the acceptance note is missing.",
+      "as_of": "2026-01-15",
+      "fictional": true
+    }
+  ]
+}
