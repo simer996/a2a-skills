@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EvalLens — eval set explorer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="mast">
+  <h1>Eval<i>Lens</i></h1>
+  <nav id="nav"><button data-v="connect" class="on">01 · Connect</button><button data-v="explore" disabled>02 · Explore</button></nav>
+  <span class="local" title="Files are parsed in your browser. Nothing is uploaded anywhere.">● local only</span>
+  <span class="sp"></span>
+  <span class="lbl" id="mastinfo"></span>
+</header>
+
+<section class="view on" id="connect"><div class="wrap">
+  <aside class="tray">
+    <div class="lbl">Source tray</div>
+    <div class="dz" id="dz"><b>Drop files here</b><small>tables: .csv · .tsv · .xlsx · .xls<br>docs: .md · .aspx · .html · .txt · .json · .docx · .pdf</small></div>
+    <div class="trayact">
+      <button class="btn sm" id="pickFiles">+ Files</button>
+      <button class="btn sm" id="pickFolder" title="Add a whole folder of grounding docs or card JSON files">+ Folder</button>
+      <button class="btn sm" id="pickDocs" title="Treat .csv/.tsv as grounding documents instead of tables">+ As docs</button>
+      <span class="sp"></span>
+    </div>
+    <input type="file" id="fileIn" multiple hidden>
+    <input type="file" id="folderIn" webkitdirectory multiple hidden>
+    <input type="file" id="docIn" multiple hidden>
+    <div id="srcs"></div>
+  </aside>
+  <main class="board">
+    <div class="row"><div style="flex:1"><h2>Schema board</h2><p class="lede">Drag columns onto roles — or pick from each role's menu. Everything can come from one workbook or many files.</p></div>
+      <button class="btn" id="clear">Clear</button><button class="btn primary" id="auto">⚡ Auto-map</button></div>
+    <div id="presetBar"></div>
+    <div id="sockets"></div>
+    <div class="model" id="model"></div>
+    <div class="row" style="margin-top:16px;justify-content:flex-end"><span class="lbl" id="readiness"></span><button class="btn primary" id="go" disabled>Open explorer →</button></div>
+    <div class="preview" id="preview"></div>
+  </main>
+</div></section>
+
+<section class="view" id="explore">
+  <div class="filters" id="filters">
+    <div class="frow">
+      <div class="apick" id="apick"><button id="aprev" title="Previous agent ( [ )">‹</button><button class="cur" id="acur"></button><button id="anext" title="Next agent ( ] )">›</button><div class="amenu" id="amenu"></div></div>
+      <div class="frow" id="facets"></div>
+      <input type="search" id="fq" placeholder="Search queries…  ( / )">
+      <span class="sp"></span><span class="kbd">[ ]</span><span class="lbl">agents</span>
+    </div>
+    <div class="crumbs" id="crumbs"></div>
+  </div>
+  <div class="dossier">
+    <article class="card" id="card"></article>
+    <section class="queries" id="queries"></section>
+  </div>
+</section>
+
+<aside class="drawer" id="drawer"></aside>
+<div class="busy" id="busy">Reading files…</div>
+
+<script src="lib/xlsx.full.min.js"></script>
+<script src="lib/mammoth.browser.min.js"></script>
+<script src="lib/marked.min.js"></script>
+<script src="lib/purify.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/ingest.js"></script>
+<script src="js/model.js"></script>
+<script src="js/connect.js"></script>
+<script src="js/explore.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
