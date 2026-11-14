@@ -2,7 +2,7 @@
 This repo contains skills and tools that can be used for evaluating the quality of A2A agent cards, agent-card/query visualizer, query builder etc. 
 
 
-**Agent Card Evaluator Skill:** 
+## Agent Card Evaluator Skill:
 
 provides a score on a 10-point rubric ( sample example - Wednesday.com, a task management tool like Jira, Asana, etc) 
 
@@ -21,6 +21,7 @@ provides a score on a 10-point rubric ( sample example - Wednesday.com, a task m
 | | **Total** | **100** | | **61.3** | | |
 
 
-**LF A2A Agent query builder:**
+
+## LF A2A Agent query builder:
 
 This skill accepts agent cards, imperfect query set(optional), grounding data, and a list of enterprise management solutions these agents are going to be based of. It does a research on those enterprise applications and then look at the agent cards and grounding data to generate queries - positive or negative. Also provides what the response expectation should be. 
