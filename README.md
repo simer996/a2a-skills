@@ -19,3 +19,8 @@ provides a score on a 10-point rubric ( sample example - Wednesday.com, a task m
 | D9 | Action Semantics & Interaction Contract | 5 | 1 | 1.25 | "manage … users, workspaces, automations" implies writes and possibly deletes; no read/write split or confirmation | Mark read-only vs write skills; require confirmation before deletes or user/workspace changes |
 | D10 | Trust, Security & Governance Signals | 5 | 2 | 2.5 | `"authentication": {"schemes": ["oauth2"]}` is non-standard (linter: "no securitySchemes declared"); provider, docs and semver present | Declare OAuth2 in `securitySchemes` with least-privilege scopes (`boards:read`, `boards:write`) |
 | | **Total** | **100** | | **61.3** | | |
+
+
+**LF A2A Agent query builder:**
+
+This skill accepts agent cards, imperfect query set(optional), grounding data, and a list of enterprise management solutions these agents are going to be based of. It does a research on those enterprise applications and then look at the agent cards and grounding data to generate queries - positive or negative. Also provides what the response expectation should be. 
