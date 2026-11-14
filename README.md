@@ -22,7 +22,7 @@ provides a score on a 10-point rubric ( sample example - Wednesday.com, a task m
 
 
 
-## LF A2A Agent query builder:
+## LF A2A Agent query builder skill:
 
 This skill accepts agent cards, imperfect query set(optional), grounding data, and a list of enterprise management solutions these agents are going to be based of. It does a research on those enterprise applications and then look at the agent cards and grounding data to generate queries - positive or negative. Also provides what the response expectation should be. 
 
@@ -30,3 +30,6 @@ This skill accepts agent cards, imperfect query set(optional), grounding data, a
 ## Agent card/Quaery visualizer (EvalLens)
 Its in browser, local tool that could be used to visualize agent cards (more than one) and respective queries at once. Can be used for visual debugging of queries (esp. if you are still in the early phases of building a query set). grounding data visualization is TBD
 <img width="2525" height="1118" alt="image" src="https://github.com/user-attachments/assets/addb1d62-defc-42aa-91a3-a49c3361240c" />
+
+## A2A agent card registration in MAC skill
+The skill contains a powershell script that does the agent card registration. It needs agent card json, tenant id, and guides user to provide the auth codes (does not ask for user creds). Can be extended to do user assignment for the registered agents. 
